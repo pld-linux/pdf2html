@@ -5,8 +5,6 @@ Version:	1.3
 Release:	1
 License:	GPL
 Group:		Applications/Publishing
-Group(de):	Applikationen/Publizieren
-Group(pl):	Aplikacje/Publikowanie
 Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/local/clock/%{name}/%{name}-%{version}.tgz
 Patch0:		%{name}-pld.patch
 URL:		http://atrey.karlin.mff.cuni.cz/~clock/twibright/pdf2html/
