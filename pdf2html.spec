@@ -39,7 +39,6 @@ install left.png	$RPM_BUILD_ROOT/var/lib/%{name}
 install right.png 	$RPM_BUILD_ROOT/var/lib/%{name}
 install idx.png		$RPM_BUILD_ROOT/var/lib/%{name}
 
-gzip -9nf CHANGELOG README
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -47,5 +46,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
-%doc *.gz
+%doc CHANGELOG README
 /var/lib/%{name}
