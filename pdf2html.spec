@@ -9,6 +9,7 @@ Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/local/clock/%{name}/%{name}-%{versio
 # Source0-md5:	974a675c5158dd03ba21bab0971d106d
 Patch0:		%{name}-pld.patch
 Patch1:		%{name}-gcc3.patch
+Patch2:		%{name}-Makefile.patch
 URL:		http://atrey.karlin.mff.cuni.cz/~clock/twibright/pdf2html/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildRequires:	libpng-devel
@@ -24,10 +25,11 @@ Konwerter PDF do HTML-a.
 %setup  -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %{__make} \
-	CFLAGS="%{rpmcflags}"
+	CC="%{__cc}" CFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
