@@ -11,9 +11,9 @@ Patch0:		%{name}-pld.patch
 Patch1:		%{name}-gcc3.patch
 Patch2:		%{name}-Makefile.patch
 URL:		http://atrey.karlin.mff.cuni.cz/~clock/twibright/pdf2html/
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildRequires:	libpng-devel
 Requires:	ghostscript
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 PDF to HTML converter.
@@ -29,7 +29,8 @@ Konwerter PDF do HTML-a.
 
 %build
 %{__make} \
-	CC="%{__cc}" CFLAGS="%{rpmcflags}"
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
