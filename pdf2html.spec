@@ -18,7 +18,7 @@ Requires:	ghostscript
 PDF to HTML converter.
 
 %description -l pl
-Konwerter PDF do HTML.
+Konwerter PDF do HTML-a.
 
 %prep
 %setup  -q
