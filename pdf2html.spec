@@ -7,16 +7,18 @@ License:	GPL
 Group:		Applications/Publishing
 Group(de):	Applikationen/Publizieren
 Group(pl):	Aplikacje/Publikowanie
-URL:		http://atrey.karlin.mff.cuni.cz/~clock/twibright/%{name}
 Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/local/clock/%{name}/%{name}-%{version}.tgz
 Patch0:		%{name}-pld.patch
+URL:		http://atrey.karlin.mff.cuni.cz/~clock/twibright/pdf2html/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Requires:	libpng
-Requires:	zlib
+BuildRequires:	libpng-devel
 Requires:	ghostscript
 
 %description
-PDF to HTML converter
+PDF to HTML converter.
+
+%description -l pl
+Konwerter PDF do HTML.
 
 %prep
 %setup -q
@@ -28,13 +30,13 @@ PDF to HTML converter
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT/%{_bindir}
+install -d $RPM_BUILD_ROOT%{_bindir}
 install -d $RPM_BUILD_ROOT/var/lib/pdf2html
 
-install pbm2eps9	$RPM_BUILD_ROOT/%{_bindir}
-install pbm2png		$RPM_BUILD_ROOT/%{_bindir}
-install pdf2html	$RPM_BUILD_ROOT/%{_bindir}
-install ps2eps9		$RPM_BUILD_ROOT/%{_bindir}
+install pbm2eps9	$RPM_BUILD_ROOT%{_bindir}
+install pbm2png		$RPM_BUILD_ROOT%{_bindir}
+install pdf2html	$RPM_BUILD_ROOT%{_bindir}
+install ps2eps9		$RPM_BUILD_ROOT%{_bindir}
 install left.png	$RPM_BUILD_ROOT/var/lib/%{name}
 install right.png 	$RPM_BUILD_ROOT/var/lib/%{name}
 install idx.png		$RPM_BUILD_ROOT/var/lib/%{name}
@@ -48,5 +50,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %doc *.gz
-%dir /var/lib/%{name}
-/var/lib/%{name}/*
+/var/lib/%{name}
