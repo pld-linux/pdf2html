@@ -1,7 +1,7 @@
-diff -Nur pdf2html-1.3.orig/pdf2html pdf2html-1.3/pdf2html
---- pdf2html-1.3.orig/pdf2html	Sat Nov 24 21:04:19 2001
-+++ pdf2html-1.3/pdf2html	Wed Dec 12 10:19:29 2001
-@@ -3,31 +3,75 @@
+diff -burN pdf2html-1.4.orig/pdf2html pdf2html-1.4/pdf2html
+--- pdf2html-1.4.orig/pdf2html	2003-09-29 20:16:54.000000000 +0000
++++ pdf2html-1.4/pdf2html	2003-09-29 20:21:08.000000000 +0000
+@@ -3,31 +3,76 @@
  # Toggle invert (several lines below) if you want to change black on white
  # to white on black.
  
@@ -9,7 +9,7 @@ diff -Nur pdf2html-1.3.orig/pdf2html pdf2html-1.3/pdf2html
 -ghostscript='gs'
 +filter=`which pbm2png`
 +ghostscript=`which gs`
- dpi=10
+ dpi=70
  basename='doses'
  titlestring='Lecture notes Distributed Systems'
  bottom='<hr>Send comments to <a href="mailto:clock@atrey.karlin.mff.cuni.cz">Clock</a>'
@@ -23,19 +23,19 @@ diff -Nur pdf2html-1.3.orig/pdf2html pdf2html-1.3/pdf2html
 +    echo "\
 +Usage: pdf2html [--dpi <DPI>] [--basename <BASENAME>] [--titlestring <TITLE>]
 +                [--bottom <BOTTOM>] [--pageoffset <PAGEOFFSET>]
-+		[--startpage <page_number>] <the_pdf>
++               [--startpage <page_number>] <the_pdf>
 +
-+	--dpi 		- sets dpi (default is 10)
-+	--basename	- base name of files (default is 'doses')
-+	--titlestring	- title of HTML page 
-+			  ('Lecture notes Distributed Systems' is default)
-+	--bottom	- bottom comment in HTML page (default is set to:
-+			  '<hr>Send comments to 
-+			  <a href=\"mailto:clock@atrey.karlin.mff.cuni.cz\">
-+			  Clock</a>')
-+	--pageoffset
-+	--startpage	- starting page (default is 0). Note thate the first
-+			  page is 0 page!
++       --dpi           - sets dpi (default is 10)
++       --basename      - base name of files (default is 'doses')
++       --titlestring   - title of HTML page 
++                         ('Lecture notes Distributed Systems' is default)
++       --bottom        - bottom comment in HTML page (default is set to:
++                         '<hr>Send comments to 
++                         <a href=\"mailto:clock@atrey.karlin.mff.cuni.cz\">
++                         Clock</a>')
++       --pageoffset
++       --startpage     - starting page (default is 0). Note thate the first
++                         page is 0 page!
 +"
 +}
 +
@@ -46,20 +46,20 @@ diff -Nur pdf2html-1.3.orig/pdf2html pdf2html-1.3/pdf2html
 +
 +while test $# -gt 0 ; do
 +    case "${1}" in
-+	--dpi )
-+	    shift; dpi="${1}"; shift ;;
-+	--basename )
-+	    shift; basename="${1}"; shift ;;
-+	--titlestring )
-+	    shift; titlestring="${1}"; shift ;;
-+	--bottom )
-+	    shift; bottom="${1}"; shift ;;
-+	--pageoffset )
-+	    shift; pageoffset="${1}"; shift ;;
-+	--startpage )
-+	    shift; start="${1}"; shift ;;
-+	* )
-+	    pdf_file="${1}"; shift ;;
++       --dpi )
++           shift; dpi="${1}"; shift ;;
++       --basename )
++           shift; basename="${1}"; shift ;;
++       --titlestring )
++           shift; titlestring="${1}"; shift ;;
++       --bottom )
++           shift; bottom="${1}"; shift ;;
++       --pageoffset )
++           shift; pageoffset="${1}"; shift ;;
++       --startpage )
++           shift; start="${1}"; shift ;;
++       * )
++           pdf_file="${1}"; shift ;;
 +    esac
 +done
  
@@ -85,4 +85,4 @@ diff -Nur pdf2html-1.3.orig/pdf2html pdf2html-1.3/pdf2html
 +cp /var/lib/pdf2html/right.png .
 +cp /var/lib/pdf2html/idx.png .
  rm -f $pname
--
+ 
