@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		Applications/Publishing
 Source0:	ftp://atrey.karlin.mff.cuni.cz/pub/local/clock/%{name}/%{name}-%{version}.tgz
+# Source0-md5:	c6c748beeac4316f2ecedf9a938bce9a
 Patch0:		%{name}-pld.patch
 URL:		http://atrey.karlin.mff.cuni.cz/~clock/twibright/pdf2html/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
