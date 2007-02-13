@@ -1,5 +1,5 @@
 Summary:	PDF to HTML converter
-Summary(pl.UTF-8):   Konwerter plików PDF do HTML-a
+Summary(pl.UTF-8):	Konwerter plików PDF do HTML-a
 Name:		pdf2html
 Version:	1.4
 Release:	1
